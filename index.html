@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - FinTracker</title>
+    <meta name="description" content="FinTracker - Controla tus finanzas personales de forma fácil y efectiva">
+    <title>FinTracker - Gestión de Finanzas Personales</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -15,90 +20,195 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         header {
             text-align: center;
-            padding: 30px 0;
-            border-bottom: 2px solid #4CAF50;
-            margin-bottom: 30px;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
-            color: #4CAF50;
-            font-size: 2em;
+            font-size: 48px;
             margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .last-updated {
-            color: #666;
-            font-size: 0.9em;
+        .tagline {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 30px;
         }
 
-        h2 {
-            color: #2c3e50;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        h3 {
-            color: #34495e;
+        .download-badge {
+            display: inline-block;
             margin-top: 20px;
+        }
+
+        .download-badge img {
+            height: 60px;
+            transition: transform 0.2s;
+        }
+
+        .download-badge img:hover {
+            transform: scale(1.05);
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-top: -40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .feature h3 {
+            color: #667eea;
             margin-bottom: 10px;
-            font-size: 1.2em;
+            font-size: 20px;
         }
 
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
+        .feature p {
+            color: #666;
+            font-size: 15px;
         }
 
-        ul {
-            margin-left: 30px;
-            margin-bottom: 15px;
+        .section {
+            margin: 50px 0;
         }
 
-        li {
-            margin-bottom: 8px;
+        .section h2 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .contact-info {
-            background-color: #e8f5e9;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 30px;
+        .section p {
+            color: #555;
+            font-size: 16px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .link-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .link-button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .link-button.secondary {
+            background: #6c757d;
+        }
+
+        .link-button.secondary:hover {
+            background: #5a6268;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
+            color: white;
             margin-top: 40px;
-            border-top: 1px solid #ddd;
-            color: #666;
-            font-size: 0.9em;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
             h1 {
-                font-size: 1.5em;
+                font-size: 36px;
             }
 
-            h2 {
-                font-size: 1.3em;
+            .tagline {
+                font-size: 18px;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -106,210 +216,103 @@
 <body>
     <div class="container">
         <header>
-            <h1>Política de Privacidad</h1>
-            <p class="app-name"><strong>FinTracker</strong></p>
-            <p class="last-updated">Última actualización: 28 de octubre de 2025</p>
+            <div class="logo">
+                <img src="app_icon.png" alt="FinTracker Logo">
+            </div>
+            <h1>FinTracker</h1>
+            <p class="tagline">Controla tus finanzas personales de forma fácil y efectiva</p>
+
+            <!-- Aqu� ir� el badge de Google Play cuando publiques -->
+            <!-- <div class="download-badge">
+                <a href="TU_LINK_DE_GOOGLE_PLAY" target="_blank">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Disponible en Google Play">
+                </a>
+            </div> -->
         </header>
 
-        <section>
-            <h2>1. Introducción</h2>
-            <p>
-                Bienvenido a FinTracker. Esta Política de Privacidad describe cómo recopilamos, utilizamos,
-                almacenamos y protegemos tu información personal cuando utilizas nuestra aplicación móvil de
-                seguimiento de finanzas personales.
-            </p>
-            <p>
-                Al utilizar FinTracker, aceptas las prácticas descritas en esta política. Si no estás de acuerdo
-                con alguna parte de esta política, por favor no utilices nuestra aplicación.
-            </p>
-        </section>
+        <div class="content">
+            <div class="section">
+                <h2>¿Qué es FinTracker?</h2>
+                <p>
+                    FinTracker es tu compañero financiero personal que te ayuda a entender a dónde va tu dinero.
+                    Registra tus ingresos y gastos, organiza por categorías y visualiza tu situación financiera de un vistazo.
+                </p>
+            </div>
 
-        <section>
-            <h2>2. Información que Recopilamos</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Balance en tiempo real</h3>
+                    <p>Conoce tu saldo actual al instante con visualizaciones claras</p>
+                </div>
 
-            <h3>2.1 Información de Cuenta</h3>
-            <p>Cuando te registras en FinTracker, recopilamos:</p>
-            <ul>
-                <li><strong>Información de autenticación:</strong> dirección de correo electrónico y contraseña (encriptada)</li>
-                <li><strong>Información de perfil de Google:</strong> si eliges iniciar sesión con Google, recopilamos tu nombre, correo electrónico y foto de perfil</li>
-                <li><strong>Identificador único de usuario:</strong> generado automáticamente para gestionar tu cuenta</li>
-            </ul>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Categorías inteligentes</h3>
+                    <p>Organiza tus transacciones y descubre en qué gastas más</p>
+                </div>
 
-            <h3>2.2 Datos Financieros</h3>
-            <p>Para proporcionar el servicio de seguimiento financiero, almacenamos:</p>
-            <ul>
-                <li>Transacciones financieras (ingresos y gastos) que tú registras</li>
-                <li>Categorías de gastos e ingresos personalizadas</li>
-                <li>Saldos y balances calculados</li>
-                <li>Presupuestos y metas financieras que configures</li>
-            </ul>
-            <p><strong>Nota importante:</strong> No recopilamos información de tarjetas de crédito, números de cuenta bancaria ni credenciales de acceso a instituciones financieras. Toda la información financiera es ingresada manualmente por ti.</p>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Múltiples cuentas</h3>
+                    <p>Gestiona efectivo, tarjetas y cuentas en un solo lugar</p>
+                </div>
 
-            <h3>2.3 Datos de Uso y Dispositivo</h3>
-            <ul>
-                <li>Configuraciones y preferencias de la aplicación</li>
-                <li>Información técnica básica del dispositivo necesaria para el funcionamiento de la app</li>
-                <li>Datos almacenados localmente en tu dispositivo para funcionalidad offline</li>
-            </ul>
-        </section>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Sincronización</h3>
+                    <p>Tus datos seguros y disponibles desde cualquier dispositivo</p>
+                </div>
 
-        <section>
-            <h2>3. Cómo Utilizamos tu Información</h2>
-            <p>Utilizamos la información recopilada para:</p>
-            <ul>
-                <li>Proporcionar y mantener el servicio de seguimiento financiero</li>
-                <li>Autenticar tu identidad y gestionar tu cuenta</li>
-                <li>Sincronizar tus datos entre dispositivos</li>
-                <li>Calcular y mostrar estadísticas, gráficos y análisis de tus finanzas</li>
-                <li>Mejorar y optimizar la funcionalidad de la aplicación</li>
-                <li>Responder a tus solicitudes de soporte técnico</li>
-                <li>Proteger contra el uso no autorizado o fraudulento</li>
-            </ul>
-        </section>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Modo offline</h3>
+                    <p>Funciona sin internet, sincroniza automáticamente</p>
+                </div>
 
-        <section>
-            <h2>4. Almacenamiento y Seguridad de Datos</h2>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privado y seguro</h3>
+                    <p>Tus datos financieros protegidos con autenticación segura</p>
+                </div>
+            </div>
 
-            <h3>4.1 Dónde Almacenamos tus Datos</h3>
-            <p>Tus datos se almacenan de dos formas:</p>
-            <ul>
-                <li><strong>Almacenamiento local:</strong> Utilizamos SQLite para almacenar datos en tu dispositivo, permitiendo funcionalidad offline</li>
-                <li><strong>Almacenamiento en la nube:</strong> Utilizamos Supabase (una plataforma de base de datos segura) para sincronizar tus datos entre dispositivos</li>
-            </ul>
+            <div class="section">
+                <h2>Empieza hoy</h2>
+                <p>
+                    Descarga FinTracker gratis y toma el control de tus finanzas.
+                    Simple, no complicado.
+                </p>
 
-            <h3>4.2 Medidas de Seguridad</h3>
-            <p>Implementamos medidas de seguridad para proteger tu información:</p>
-            <ul>
-                <li>Encriptación de contraseñas utilizando algoritmos seguros</li>
-                <li>Comunicación segura mediante HTTPS/SSL</li>
-                <li>Autenticación mediante Firebase Authentication y Supabase</li>
-                <li>Acceso restringido a datos sensibles</li>
-                <li>Almacenamiento seguro en servidores con certificaciones de seguridad</li>
-            </ul>
-            <p>
-                Sin embargo, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro.
-                Aunque nos esforzamos por proteger tu información personal, no podemos garantizar su seguridad absoluta.
-            </p>
-        </section>
-
-        <section>
-            <h2>5. Compartir Información con Terceros</h2>
-
-            <h3>5.1 Proveedores de Servicios</h3>
-            <p>Utilizamos los siguientes servicios de terceros para operar nuestra aplicación:</p>
-            <ul>
-                <li><strong>Supabase:</strong> Para autenticación de usuarios y almacenamiento de datos en la nube</li>
-                <li><strong>Firebase/Google:</strong> Para autenticación mediante Google Sign-In</li>
-            </ul>
-            <p>
-                Estos proveedores tienen acceso limitado a tu información solo para realizar tareas específicas
-                en nuestro nombre y están obligados a no divulgar ni utilizar tu información para otros fines.
-            </p>
-
-            <h3>5.2 No Vendemos tus Datos</h3>
-            <p>
-                <strong>No vendemos, alquilamos ni compartimos tu información personal con terceros para
-                fines de marketing o publicidad.</strong>
-            </p>
-
-            <h3>5.3 Requisitos Legales</h3>
-            <p>Podemos divulgar tu información si es requerido por ley o en respuesta a:</p>
-            <ul>
-                <li>Órdenes judiciales o procedimientos legales</li>
-                <li>Solicitudes gubernamentales legítimas</li>
-                <li>Protección de nuestros derechos, privacidad, seguridad o propiedad</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>6. Tus Derechos y Opciones</h2>
-            <p>Tienes los siguientes derechos respecto a tu información personal:</p>
-
-            <h3>6.1 Acceso y Portabilidad</h3>
-            <ul>
-                <li>Acceder a todos tus datos desde la aplicación en cualquier momento</li>
-                <li>Solicitar una copia de tu información personal</li>
-            </ul>
-
-            <h3>6.2 Corrección y Actualización</h3>
-            <ul>
-                <li>Modificar o actualizar tu información de perfil desde la configuración de la app</li>
-                <li>Editar o eliminar transacciones y datos financieros directamente en la aplicación</li>
-            </ul>
-
-            <h3>6.3 Eliminación de Cuenta</h3>
-            <ul>
-                <li>Puedes solicitar la eliminación completa de tu cuenta y todos los datos asociados</li>
-                <li>Contacta con nosotros para procesar la eliminación (ver sección de contacto)</li>
-                <li>La eliminación es permanente e irreversible</li>
-            </ul>
-
-            <h3>6.4 Desactivar Sincronización</h3>
-            <ul>
-                <li>Puedes elegir usar la aplicación en modo offline y desactivar la sincronización en la nube</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>7. Retención de Datos</h2>
-            <p>
-                Conservamos tu información personal mientras tu cuenta esté activa o según sea necesario para
-                proporcionarte los servicios. Si solicitas la eliminación de tu cuenta, eliminaremos o
-                anonimizaremos tu información personal dentro de un plazo razonable, excepto cuando la ley
-                requiera que la conservemos por más tiempo.
-            </p>
-        </section>
-
-        <section>
-            <h2>8. Privacidad de Menores</h2>
-            <p>
-                Nuestra aplicación no está dirigida a menores de 13 años. No recopilamos conscientemente
-                información personal de menores de 13 años. Si descubrimos que hemos recopilado información
-                de un menor sin el consentimiento parental verificable, tomaremos medidas para eliminar
-                esa información de nuestros servidores.
-            </p>
-        </section>
-
-        <section>
-            <h2>9. Cambios en esta Política de Privacidad</h2>
-            <p>
-                Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos sobre cambios
-                importantes mediante una notificación en la aplicación o por correo electrónico. Te recomendamos
-                revisar esta política periódicamente para estar informado sobre cómo protegemos tu información.
-            </p>
-            <p>
-                La fecha de "Última actualización" en la parte superior indica cuándo se modificó esta política
-                por última vez.
-            </p>
-        </section>
-
-        <section>
-            <h2>10. Transferencias Internacionales</h2>
-            <p>
-                Tu información puede ser transferida y mantenida en servidores ubicados fuera de tu país de
-                residencia, donde las leyes de protección de datos pueden ser diferentes. Al utilizar FinTracker,
-                consientes esta transferencia de información.
-            </p>
-        </section>
-
-        <section class="contact-info">
-            <h2>11. Contacto</h2>
-            <p>
-                Si tienes preguntas, inquietudes o solicitudes relacionadas con esta Política de Privacidad
-                o el manejo de tus datos personales, puedes contactarnos en:
-            </p>
-            <ul>
-                <li><strong>Email:</strong> aperezaramillo.dev@gmail.com</li>
-                <li><strong>Desarrollador:</strong> Aramillo Dev</li>
-            </ul>
-            <p>
-                Nos comprometemos a responder a tus solicitudes dentro de un plazo razonable.
-            </p>
-        </section>
+                <div class="links">
+                    <!-- <a href="TU_LINK_DE_GOOGLE_PLAY" class="link-button" target="_blank">
+                        Descargar en Google Play
+                    </a> -->
+                    <a href="privacy-policy.html" class="link-button secondary">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
 
         <footer>
-            <p>&copy; 2025 FinTracker. Todos los derechos reservados.</p>
-            <p>Esta aplicación es desarrollada de forma independiente.</p>
+            <p>
+                �Necesitas ayuda? Cont�ctanos en
+                <a href="mailto:aperezaramillo.dev@gmail.com">aperezaramillo.dev@gmail.com</a>
+            </p>
+            <p style="margin-top: 20px; opacity: 0.8;">
+                � 2025 FinTracker. Todos los derechos reservados.
+            </p>
         </footer>
     </div>
 </body>
