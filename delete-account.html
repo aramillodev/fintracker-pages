@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar cuenta - FinTracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h3 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box p {
+            color: #856404;
+            margin: 5px 0;
+        }
+
+        .steps {
+            margin: 30px 0;
+        }
+
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .step h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .step p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .deletion-list {
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .deletion-list h3 {
+            color: #c62828;
+            margin-bottom: 15px;
+        }
+
+        .deletion-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .deletion-list li {
+            padding: 8px 0;
+            color: #d32f2f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .deletion-list li::before {
+            content: "✗";
+            color: #d32f2f;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .contact {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            color: #0d47a1;
+        }
+
+        .contact a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .step h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Eliminar tu cuenta de FinTracker</h1>
+            <p>Información sobre cómo eliminar permanentemente tu cuenta y todos tus datos</p>
+        </div>
+
+        <div class="warning-box">
+            <h3>⚠️ Advertencia Importante</h3>
+            <p><strong>Esta acción es permanente e irreversible.</strong></p>
+            <p>Una vez eliminada tu cuenta, no podrás recuperar tus datos.</p>
+        </div>
+
+        <div class="deletion-list">
+            <h3>Se eliminarán permanentemente:</h3>
+            <ul>
+                <li>Todas tus transacciones financieras</li>
+                <li>Todas tus cuentas y balances</li>
+                <li>Tus categorías personalizadas</li>
+                <li>Tu perfil y datos personales</li>
+                <li>Tu historial de uso de la aplicación</li>
+            </ul>
+        </div>
+
+        <div class="steps">
+            <h2 style="color: #667eea; margin-bottom: 20px;">Cómo eliminar tu cuenta</h2>
+
+            <div class="step">
+                <h3><span class="step-number">1</span> Abre la aplicación FinTracker</h3>
+                <p>Inicia sesión con tu cuenta en la aplicación móvil</p>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">2</span> Ve a tu Perfil</h3>
+                <p>Desde el menú principal, accede a la sección "Mi Perfil"</p>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">3</span> Busca la opción "Eliminar cuenta"</h3>
+                <p>Desplázate hasta la sección "SEGURIDAD Y SOPORTE"</p>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">4</span> Confirma la eliminación</h3>
+                <p>Lee cuidadosamente la advertencia y confirma que deseas eliminar tu cuenta permanentemente</p>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">5</span> Listo</h3>
+                <p>Tu cuenta y todos tus datos serán eliminados inmediatamente</p>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h3>¿Necesitas ayuda?</h3>
+            <p>Si tienes problemas para eliminar tu cuenta o tienes preguntas, contáctanos:</p>
+            <p><a href="mailto:support@fintracker.com">aperezaramillo.dev@gmail.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
