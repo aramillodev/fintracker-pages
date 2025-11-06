@@ -87,6 +87,40 @@
             margin: 20px 0;
         }
 
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comparison-table th {
+            background: #f8f9fa;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            color: #555;
+        }
+
+        .checkmark {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .crossmark {
+            color: #f44336;
+            font-weight: bold;
+        }
+
         .contact-info {
             background: #f8f9fa;
             padding: 20px;
@@ -116,6 +150,14 @@
             text-decoration: underline;
         }
 
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 30px 20px;
@@ -128,6 +170,15 @@
             h2 {
                 font-size: 20px;
             }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px;
+            }
         }
     </style>
 </head>
@@ -136,10 +187,10 @@
         <a href="index.html" class="back-link">← Volver a inicio</a>
 
         <h1>Política de Privacidad</h1>
-        <p class="last-updated">Última actualización: 28 de octubre de 2025</p>
+        <p class="last-updated">Última actualización: 6 de noviembre de 2024</p>
 
         <div class="highlight">
-            <p><strong>En resumen:</strong> FinTracker respeta tu privacidad. Recopilamos solo la información necesaria para que la app funcione (email y datos financieros que tú ingresas). No vendemos ni compartimos tus datos con terceros. Todos tus datos están cifrados y protegidos.</p>
+            <p><strong>En resumen:</strong> FinTracker respeta tu privacidad. Puedes usar la app completamente offline (tus datos quedan solo en tu dispositivo) o con una cuenta en línea para sincronizar entre dispositivos. Recopilamos solo la información necesaria para que la app funcione. No vendemos ni compartimos tus datos con terceros. Todos tus datos están cifrados y protegidos.</p>
         </div>
 
         <h2>1. Introducción</h2>
@@ -154,8 +205,10 @@
 
         <h3>2.1 Información que Proporcionas Directamente</h3>
         <ul>
-            <li><strong>Información de cuenta:</strong> Email, nombre y contraseña (cifrada)</li>
-            <li><strong>Información financiera:</strong> Transacciones (ingresos y gastos), categorías, nombres de cuentas, balances y notas que ingreses voluntariamente</li>
+            <li><strong>Información de cuenta:</strong> Email, nombre y contraseña (cifrada) - solo si creas una cuenta en línea</li>
+            <li><strong>Información financiera:</strong> Transacciones (ingresos y gastos), categorías personalizadas con iconos y colores, nombres de cuentas (banco, efectivo, tarjetas, ahorros, inversión), balances y notas que ingreses voluntariamente</li>
+            <li><strong>Presupuestos:</strong> Límites mensuales por categoría, alertas de presupuesto configuradas</li>
+            <li><strong>Configuraciones personales:</strong> Idioma preferido (español/inglés), tema visual (claro/oscuro), moneda predeterminada (entre más de 40 opciones), cuenta predeterminada</li>
             <li><strong>Foto de perfil:</strong> Si inicias sesión con Google, podemos acceder a tu foto de perfil</li>
         </ul>
 
@@ -163,6 +216,7 @@
         <ul>
             <li><strong>Información del dispositivo:</strong> Tipo de dispositivo, sistema operativo y versión de la app</li>
             <li><strong>Datos de uso:</strong> Fecha y hora de acceso, funcionalidades utilizadas (para mejorar la app)</li>
+            <li><strong>Datos de sincronización:</strong> Marca de tiempo de última sincronización manual (solo si usas cuenta en línea)</li>
         </ul>
 
         <h3>2.3 Información que NO Recopilamos</h3>
@@ -171,108 +225,252 @@
             <li>No accedemos a tus cuentas bancarias reales</li>
             <li>No rastreamos tu ubicación</li>
             <li>No recopilamos contactos de tu dispositivo</li>
+            <li>No recopilamos datos biométricos</li>
         </ul>
 
         <h2>3. Cómo Usamos tu Información</h2>
         <p>Utilizamos la información recopilada para:</p>
         <ul>
-            <li><strong>Proporcionar el servicio:</strong> Gestionar tu cuenta, sincronizar tus datos entre dispositivos</li>
+            <li><strong>Proporcionar el servicio:</strong> Gestionar tu cuenta, sincronizar tus datos entre dispositivos cuando lo solicites manualmente</li>
+            <li><strong>Funcionalidad de la app:</strong> Calcular balances, generar estadísticas, gestionar presupuestos, crear alertas, exportar datos en formato CSV</li>
             <li><strong>Mejorar la aplicación:</strong> Entender cómo se usa la app para añadir mejoras</li>
-            <li><strong>Comunicaciones:</strong> Enviarte emails de confirmación, recuperación de contraseña y actualizaciones importantes</li>
+            <li><strong>Comunicaciones:</strong> Enviarte emails de confirmación, recuperación de contraseña y actualizaciones importantes (solo si tienes cuenta en línea)</li>
             <li><strong>Seguridad:</strong> Detectar y prevenir fraudes o uso no autorizado</li>
         </ul>
 
-        <h2>4. Compartir tu Información</h2>
+        <h2>4. Modo Offline vs Modo Online</h2>
+        <p>FinTracker ofrece dos formas de usar la aplicación:</p>
 
-        <h3>4.1 No Vendemos tus Datos</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Con Cuenta (Online)</th>
+                    <th>Sin Cuenta (Offline)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sincronización multi-dispositivo</td>
+                    <td class="checkmark">✓</td>
+                    <td class="crossmark">✗</td>
+                </tr>
+                <tr>
+                    <td>Backup en la nube</td>
+                    <td class="checkmark">✓</td>
+                    <td class="crossmark">✗</td>
+                </tr>
+                <tr>
+                    <td>Datos cifrados</td>
+                    <td class="checkmark">✓</td>
+                    <td class="checkmark">✓</td>
+                </tr>
+                <tr>
+                    <td>Funcionalidad completa</td>
+                    <td class="checkmark">✓</td>
+                    <td class="checkmark">✓</td>
+                </tr>
+                <tr>
+                    <td>Requiere email</td>
+                    <td class="checkmark">✓</td>
+                    <td class="crossmark">✗</td>
+                </tr>
+                <tr>
+                    <td>Datos almacenados en</td>
+                    <td>Tu dispositivo + Nube</td>
+                    <td>Solo tu dispositivo</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4.1 Modo Offline</h3>
+        <p>Cuando uses la app sin crear cuenta:</p>
+        <ul>
+            <li>Tus datos se almacenan <strong>únicamente</strong> en tu dispositivo de forma cifrada</li>
+            <li>No se envía ninguna información a nuestros servidores</li>
+            <li>Tienes acceso completo a todas las funcionalidades (transacciones, presupuestos, estadísticas, exportación)</li>
+            <li><strong>Importante:</strong> Si desinstalas la app o borras los datos de la aplicación, perderás toda tu información</li>
+            <li>No hay recuperación de datos posible sin backup manual</li>
+        </ul>
+
+        <h3>4.2 Modo Online (Con Cuenta)</h3>
+        <p>Cuando creas una cuenta:</p>
+        <ul>
+            <li>Tus datos se almacenan en tu dispositivo Y en nuestros servidores seguros</li>
+            <li>Puedes sincronizar manualmente entre múltiples dispositivos</li>
+            <li>Tus datos tienen backup automático en la nube</li>
+            <li>Puedes recuperar tu cuenta si cambias de dispositivo</li>
+        </ul>
+
+        <div class="info-box">
+            <p><strong>Nota importante:</strong> Puedes cambiar entre modos en cualquier momento. Si cambias de offline a online, tus datos locales se sincronizarán con la nube. Si eliminas tu cuenta, tus datos en la nube se borrarán pero los datos locales permanecerán en tu dispositivo hasta que los borres manualmente.</p>
+        </div>
+
+        <h2>5. Compartir tu Información</h2>
+
+        <h3>5.1 No Vendemos tus Datos</h3>
         <p>
             <strong>Nunca vendemos, alquilamos o compartimos tu información personal con terceros para fines de marketing.</strong>
         </p>
 
-        <h3>4.2 Proveedores de Servicios</h3>
-        <p>Compartimos información limitada con:</p>
+        <h3>5.2 Proveedores de Servicios</h3>
+        <p>Solo si usas una cuenta en línea, compartimos información limitada con:</p>
         <ul>
             <li><strong>Supabase:</strong> Para almacenamiento de datos y autenticación (cifrado en tránsito y en reposo)</li>
-            <li><strong>Google Firebase:</strong> Para autenticación con Google Sign-In</li>
+            <li><strong>Google OAuth:</strong> Para autenticación con Google Sign-In (si eliges esta opción)</li>
         </ul>
         <p>Estos proveedores están obligados contractualmente a proteger tu información y no pueden usarla para otros fines.</p>
 
-        <h3>4.3 Requerimientos Legales</h3>
+        <h3>5.3 Requerimientos Legales</h3>
         <p>Podemos divulgar información si es requerido por ley, orden judicial o proceso legal válido.</p>
 
-        <h2>5. Seguridad de los Datos</h2>
+        <h2>6. Seguridad de los Datos</h2>
         <p>Tomamos la seguridad muy en serio:</p>
+
+        <h3>6.1 Seguridad en Tránsito</h3>
         <ul>
-            <li><strong>Cifrado en tránsito:</strong> Toda comunicación entre tu dispositivo y nuestros servidores usa HTTPS/TLS</li>
-            <li><strong>Cifrado en reposo:</strong> Tus datos se almacenan cifrados en servidores seguros</li>
-            <li><strong>Contraseñas:</strong> Las contraseñas se almacenan usando hash seguro (nunca en texto plano)</li>
-            <li><strong>Autenticación:</strong> Protección con tokens JWT y sesiones seguras</li>
+            <li><strong>Cifrado HTTPS/TLS:</strong> Toda comunicación entre tu dispositivo y nuestros servidores usa protocolos seguros</li>
         </ul>
 
-        <h2>6. Tus Derechos</h2>
+        <h3>6.2 Seguridad en Reposo</h3>
+        <ul>
+            <li><strong>Datos en la nube:</strong> Almacenados cifrados en servidores de Supabase con certificación SOC 2 Type II</li>
+            <li><strong>Datos locales:</strong> Almacenados cifrados en el dispositivo usando almacenamiento seguro del sistema operativo</li>
+            <li><strong>Contraseñas:</strong> Se almacenan usando hash seguro con bcrypt (nunca en texto plano)</li>
+        </ul>
+
+        <h3>6.3 Autenticación y Sesiones</h3>
+        <ul>
+            <li><strong>Tokens JWT:</strong> Para autenticación segura de sesiones</li>
+            <li><strong>Expiración de sesión:</strong> Las sesiones expiran automáticamente por seguridad</li>
+            <li><strong>Protección de cuenta:</strong> Opción de cerrar sesión en todos los dispositivos</li>
+        </ul>
+
+        <h2>7. Tus Derechos</h2>
         <p>Tienes derecho a:</p>
         <ul>
             <li><strong>Acceder:</strong> Ver qué información personal tenemos sobre ti</li>
-            <li><strong>Corregir:</strong> Actualizar información incorrecta desde la app</li>
-            <li><strong>Exportar:</strong> Descargar una copia de tus datos</li>
-            <li><strong>Eliminar:</strong> Borrar tu cuenta y todos tus datos permanentemente</li>
+            <li><strong>Corregir:</strong> Actualizar información incorrecta directamente desde la app</li>
+            <li><strong>Exportar:</strong> Descargar tus transacciones en formato CSV con filtros personalizables (Transacciones → Exportar)</li>
+            <li><strong>Portabilidad:</strong> Transferir tus datos a otra aplicación usando el archivo CSV exportado</li>
+            <li><strong>Eliminar:</strong> Borrar tu cuenta y todos tus datos de la nube permanentemente (Perfil → Eliminar cuenta)</li>
+            <li><strong>Revocar consentimiento:</strong> Cambiar de modo online a offline eliminando tu cuenta</li>
         </ul>
         <p>
             Para ejercer estos derechos, puedes:
         </p>
         <ul>
-            <li>Eliminar tu cuenta directamente desde la app (Perfil → Eliminar cuenta)</li>
+            <li>Gestionar tus datos directamente desde la app (editar, exportar, eliminar)</li>
+            <li>Eliminar tu cuenta desde Perfil → Configuración → Eliminar cuenta</li>
             <li>Contactarnos en <a href="mailto:aperezaramillo.dev@gmail.com">aperezaramillo.dev@gmail.com</a></li>
         </ul>
 
-        <h2>7. Retención de Datos</h2>
+        <h2>8. Retención de Datos</h2>
         <p>
-            Mantenemos tus datos mientras tu cuenta esté activa. Si eliminas tu cuenta, todos tus datos se borran permanentemente de nuestros servidores en un plazo de 30 días.
+            <strong>Modo Online:</strong> Mantenemos tus datos mientras tu cuenta esté activa. Si eliminas tu cuenta, todos tus datos se borran permanentemente de nuestros servidores en un plazo de 30 días.
         </p>
         <p>
-            Algunos datos pueden conservarse por períodos más largos si es requerido por ley (por ejemplo, registros de transacciones para auditorías).
+            <strong>Modo Offline:</strong> Tus datos permanecen en tu dispositivo hasta que:
+        </p>
+        <ul>
+            <li>Desinstalas la aplicación</li>
+            <li>Borras los datos de la aplicación desde la configuración del dispositivo</li>
+            <li>Eliminas manualmente tus transacciones y categorías</li>
+        </ul>
+        <p>
+            Algunos datos pueden conservarse por períodos más largos si es requerido por ley (por ejemplo, registros de transacciones para auditorías fiscales).
         </p>
 
-        <h2>8. Menores de Edad</h2>
+        <h2>9. Menores de Edad</h2>
         <p>
             FinTracker no está dirigida a menores de 13 años. No recopilamos intencionalmente información de menores. Si descubrimos que un menor nos ha proporcionado información personal, la eliminaremos inmediatamente.
         </p>
+        <p>
+            Los padres o tutores que descubran que un menor ha creado una cuenta deben contactarnos inmediatamente en <a href="mailto:aperezaramillo.dev@gmail.com">aperezaramillo.dev@gmail.com</a>.
+        </p>
 
-        <h2>9. Cambios a esta Política</h2>
+        <h2>10. Cambios a esta Política</h2>
         <p>
             Podemos actualizar esta política ocasionalmente. Te notificaremos de cambios significativos mediante:
         </p>
         <ul>
             <li>Notificación dentro de la app</li>
-            <li>Email a tu dirección registrada</li>
+            <li>Email a tu dirección registrada (si tienes cuenta en línea)</li>
             <li>Actualización de la fecha "Última actualización" en esta página</li>
         </ul>
         <p>
-            Te recomendamos revisar esta política periódicamente.
+            Te recomendamos revisar esta política periódicamente. El uso continuado de la app después de cambios constituye tu aceptación de la política modificada.
         </p>
 
-        <h2>10. Transferencias Internacionales</h2>
+        <h2>11. Transferencias Internacionales</h2>
         <p>
-            Tus datos pueden ser transferidos y almacenados en servidores ubicados fuera de tu país. Al usar FinTracker, consientes estas transferencias. Nos aseguramos de que todos los proveedores cumplan con estándares internacionales de protección de datos.
+            Si usas el modo online, tus datos pueden ser transferidos y almacenados en servidores ubicados en diferentes países. Al usar FinTracker con una cuenta en línea, consientes estas transferencias. Nos aseguramos de que todos los proveedores cumplan con estándares internacionales de protección de datos (GDPR, SOC 2, ISO 27001).
+        </p>
+        <p>
+            <strong>Modo Offline:</strong> No hay transferencias internacionales ya que tus datos permanecen únicamente en tu dispositivo.
         </p>
 
-        <h2>11. Cookies y Tecnologías Similares</h2>
+        <h2>12. Cookies y Tecnologías Similares</h2>
         <p>
             La aplicación móvil no usa cookies. Sin embargo, usamos almacenamiento local en tu dispositivo para:
         </p>
         <ul>
-            <li>Mantener tu sesión activa</li>
-            <li>Guardar preferencias de la app</li>
-            <li>Permitir funcionalidad offline</li>
+            <li>Mantener tu sesión activa (si usas cuenta en línea)</li>
+            <li>Guardar preferencias de la app (idioma, tema, moneda)</li>
+            <li>Almacenar datos financieros localmente</li>
+            <li>Permitir funcionalidad offline completa</li>
         </ul>
-        <p>Puedes borrar estos datos eliminando la app o limpiando los datos de la aplicación desde la configuración de tu dispositivo.</p>
+        <p>Puedes borrar estos datos:</p>
+        <ul>
+            <li>Eliminando la app de tu dispositivo</li>
+            <li>Limpiando los datos de la aplicación desde la configuración de tu dispositivo</li>
+            <li>Usando la opción "Borrar datos locales" dentro de la app (Perfil → Configuración)</li>
+        </ul>
 
-        <h2>12. Contacto</h2>
+        <h2>13. Aviso de Privacidad (México)</h2>
+        <p>
+            De conformidad con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), FinTracker actúa como responsable del tratamiento de tus datos personales.
+        </p>
+
+        <h3>13.1 Finalidades del Tratamiento</h3>
+        <p>Tus datos personales serán utilizados para las siguientes finalidades necesarias:</p>
+        <ul>
+            <li>Proveer los servicios de gestión financiera personal</li>
+            <li>Sincronizar información entre tus dispositivos (si aplica)</li>
+            <li>Generar estadísticas y reportes personalizados</li>
+            <li>Dar cumplimiento a obligaciones legales</li>
+        </ul>
+
+        <h3>13.2 Derechos ARCO</h3>
+        <p>Tienes derecho a Acceder, Rectificar, Cancelar u Oponerte al tratamiento de tus datos personales (Derechos ARCO), así como a revocar tu consentimiento. Para ejercer estos derechos, contacta a:</p>
+        <ul>
+            <li><strong>Email:</strong> aperezaramillo.dev@gmail.com</li>
+            <li><strong>Tiempo de respuesta:</strong> 20 días hábiles</li>
+        </ul>
+
+        <h3>13.3 Transferencias</h3>
+        <p>Tus datos personales pueden ser transferidos a proveedores de servicios en el extranjero (Estados Unidos) para el almacenamiento en la nube. Estas transferencias se realizan con tu consentimiento y bajo estándares de protección equivalentes.</p>
+
+        <h2>14. Cumplimiento GDPR (Unión Europea)</h2>
+        <p>Si eres residente de la Unión Europea, tienes derechos adicionales bajo el GDPR:</p>
+        <ul>
+            <li><strong>Base legal:</strong> Procesamos tus datos con base en tu consentimiento explícito</li>
+            <li><strong>Derecho al olvido:</strong> Puedes solicitar la eliminación completa de tus datos</li>
+            <li><strong>Portabilidad:</strong> Puedes exportar tus datos en formato CSV estándar</li>
+            <li><strong>Oposición:</strong> Puedes oponerte al procesamiento de tus datos en cualquier momento</li>
+            <li><strong>Autoridad supervisora:</strong> Tienes derecho a presentar una queja ante tu autoridad de protección de datos local</li>
+        </ul>
+
+        <h2>15. Contacto</h2>
         <div class="contact-info">
             <p>Si tienes preguntas, inquietudes o solicitudes sobre esta Política de Privacidad, contáctanos:</p>
             <p style="margin-top: 15px;">
                 <strong>Email:</strong> <a href="mailto:aperezaramillo.dev@gmail.com">aperezaramillo.dev@gmail.com</a><br>
-                <strong>Respuesta:</strong> Dentro de 48 horas hábiles
+                <strong>Respuesta:</strong> Dentro de 48 horas hábiles<br>
+                <strong>Asunto sugerido:</strong> "Privacidad - FinTracker"
+            </p>
+            <p style="margin-top: 15px;">
+                Para solicitudes ARCO (México) o ejercicio de derechos GDPR (UE), por favor indica claramente en el asunto del email.
             </p>
         </div>
 
